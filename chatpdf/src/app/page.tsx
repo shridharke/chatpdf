@@ -3,6 +3,7 @@ import { UserButton } from '@clerk/nextjs'
 import { auth } from '@clerk/nextjs/server'
 import Link from 'next/link'
 import { LogIn } from 'lucide-react'
+import FileUpload from '@/components/FileUpload'
 
 const Home = async () => {
 
@@ -22,11 +23,11 @@ const Home = async () => {
             {isAuth && <Button>Go to Chats</Button>}
           </div>
 
-          <p className="max-w-xl mt-2 text-lg text-slate-600">Join millions on students, professionals and researchers to use AI to simplify your PDF research.</p>
+          <p className="max-w-xl mt-2 text-lg text-slate-600">Join millions of students, professionals and researchers to use AI to simplify your PDF research.</p>
 
           <div className="w-full mt-4">
             {isAuth ? (
-              <h1>File Upload</h1>
+              <FileUpload />
             ) : (
               <Link href='/sign-in'>
                 <Button>
